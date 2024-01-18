@@ -1,5 +1,5 @@
 -- Creates a stored procedure AddBonus that adds a new correction for a student.
-DELIMETER //
+DELIMITER //
 CREATE PROCEDURE AddBonus(IN p_user_id INT, IN p_project_name VARCHAR(255), IN p_score INT)
 BEGIN
     DECLARE project_id INT;
@@ -12,4 +12,4 @@ BEGIN
 
 END;
 //
-DELIMETER ;
+DELIMITER ;
