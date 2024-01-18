@@ -1,6 +1,6 @@
 -- Creates a stored procedure ComputeAverageScoreForUser
 DROP PROCEDURE IF EXISTS ComputeAverageScoreForUser;
-DELIMETER $$
+DELIMITER $$
 CREATE PROCEDURE ComputeAverageScoreForUser(
     IN user_id INT)
 BEGIN
@@ -9,4 +9,4 @@ BEGIN
     UPDATE users SET average_score = avg_score WHERE id=user_id;
 END;
 $$
-DELIMETER ;
+DELIMITER ;
