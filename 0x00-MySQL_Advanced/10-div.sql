@@ -4,14 +4,14 @@
 
 DELIMITER $$
 
-CREATE FUNCTION SafeDiv( a INT, b INT) RETURNS FLOAT DETERMINISTIC
+CREATE FUNCTION SafeDiv(a INT, b INT) RETURNS FLOAT DETERMINISTIC
 BEGIN
     DECLARE result FLOAT;
     if b != 0 THEN
         SET result = a / b;
     ELSE
         SET result = 0;
-    ENDIF;
+    END IF;
 
     RETURN result;
 END;
