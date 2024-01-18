@@ -1,6 +1,7 @@
 -- Creates a stored procedure ComputeAverageWeightedScoreForUser
 -- that computes and store the average weighted score for a student.
 DROP PROCEDURE IF EXISTS ComputerAverageWeightedScoreForUser;
+DELIMITER $$
 CREATE PROCEDURE ComputerAverageWeightedScoreForUser(
     used_id INT
 )
@@ -11,7 +12,7 @@ BEGIN
                         JOIN corrections as C ON U.id=C.user_id
                         JOIN projects AS P ON C.project_id=P.id
                         WHERE U.id=user_id);
-    UPDATE users SET average_score = w_avg_score = w_avg_score WHERE id=user_id;
+    UPDATE users SET average_score = w_avg_score WHERE id=user_id;
 END;
 $$
 DELIMETER ;
